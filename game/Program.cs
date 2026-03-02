@@ -29,7 +29,7 @@ namespace game
         {
             for (int room = 1; room <= 15 && gameRunning; room++)
             {
-                Console.WriteLine($"\n--- Комната {room} ---");
+                Console.WriteLine($"--- Комната {room} ---");
                 ProcessRoom(room);
             }
 
@@ -43,7 +43,7 @@ namespace game
         {
             if (roomNumber == 15) return;
 
-            int eventType = rand.Next(7); // 0-6
+            int eventType = rand.Next(7); 
 
             switch (eventType)
             {
@@ -190,8 +190,8 @@ namespace game
         {
             if (gold >= 10)
             {
-                Console.WriteLine("Алтарь: пожертвовать 10 золота? (y/n)");
-                if (Console.ReadLine()?.ToLower() == "y")
+                Console.WriteLine("Алтарь: пожертвовать 10 золота? (да/нет)");
+                if (Console.ReadLine()?.ToLower() == "да")
                 {
                     gold -= 10;
                     int buff = rand.Next(2);
@@ -217,8 +217,8 @@ namespace game
         {
             if (hp >= 10)
             {
-                Console.WriteLine("Тёмный маг: отдай 10 HP, получишь 2 зелья и 5 стрел. Согласен? (y/n)");
-                if (Console.ReadLine()?.ToLower() == "y")
+                Console.WriteLine("Тёмный маг: отдай 10 HP, получишь 2 зелья и 5 стрел. Согласен? (да/нет)");
+                if (Console.ReadLine()?.ToLower() == "да")
                 {
                     hp -= 10;
                     potions += 2;
@@ -322,9 +322,9 @@ namespace game
         static void EndGame(bool isWin)
         {
             if (isWin)
-                Console.WriteLine("\nПоздравляем! Вы победили босса и прошли подземелье!");
+                Console.WriteLine("Поздравляем! Вы победили босса и прошли подземелье!");
             else
-                Console.WriteLine("\nИгра окончена. Вы проиграли.");
+                Console.WriteLine("Игра окончена. Вы проиграли.");
 
             Console.WriteLine("Нажмите любую клавишу для выхода...");
             Console.ReadKey();
